@@ -44,9 +44,11 @@ export class LoginComponent {
         next: () => window.location.href = '/',
         error: () => {
           this.invalidCredentials = true;
+          setTimeout(() => {
+            this.invalidCredentials = false;
+          }, 2500);
         }
       });
     }
   }
-
 }

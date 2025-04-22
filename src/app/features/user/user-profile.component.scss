@@ -4,7 +4,7 @@
   gap: 1rem;
   padding: 2rem;
   max-width: 400px;
-  margin: 2rem auto;
+  margin: auto;
   background-color: #fff;
   border-radius: 16px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
@@ -41,8 +41,24 @@
 
 .error {
   color: #d32f2f;
+  border-color: #d32f2f;
+}
+
+.success-message {
+  color: #155724;
+}
+
+input.ng-invalid.ng-touched {
+  border: 1px solid  #d32f2f;
+}
+
+input.ng-valid.ng-touched {
+  border: 1px solid #155724;
+}
+
+.error, .success-message {
   font-size: 0.875rem;
-  margin-top: 0.25rem;
+  margin-top: 8px;
 }
 
 .update-btn {
