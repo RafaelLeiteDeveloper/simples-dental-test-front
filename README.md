@@ -55,7 +55,7 @@ Este projeto foi desenvolvido como parte de um desafio técnico proposto pela Si
 docker-compose up --build
 ```
 
-- A aplicação será iniciada em: `http://localhost:8081`
+- A aplicação será iniciada em: `http://localhost:4200`
 
 ### ✅ Sem Docker (ambiente local)
 
