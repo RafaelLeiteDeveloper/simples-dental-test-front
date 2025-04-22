@@ -1,0 +1,14 @@
+<div class="form-field">
+  <label class="form-label">{{ label }}</label>
+
+  <select class="form-input" [formControl]="control">
+    <option value="" disabled>{{ placeholder }}</option>
+    <option *ngFor="let option of options" [value]="option[valueKey]">
+      {{ option[displayKey] }}
+    </option>
+  </select>
+
+  <div class="form-error" *ngIf="control?.hasError('required') && control?.touched">
+    {{ label }} is required
+  </div>
+</div>

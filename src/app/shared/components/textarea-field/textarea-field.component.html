@@ -1,0 +1,14 @@
+<div class="custom-form-field">
+  <label class="custom-label">{{ label }}</label>
+
+  <textarea
+    class="custom-input"
+    [placeholder]="placeholder"
+    [formControl]="control"
+    [rows]="rows"
+  ></textarea>
+
+  <div *ngIf="control?.touched && control?.hasError('required')" class="error">
+    {{ label }} is required
+  </div>
+</div>

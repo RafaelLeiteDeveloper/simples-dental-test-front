@@ -1,0 +1,23 @@
+<form [formGroup]="form" (ngSubmit)="login()">
+  <app-input-field
+    label="Email"
+    placeholder="Digite seu email"
+    type="email"
+    [control]="emailControl"
+    [required]="true"
+  ></app-input-field>
+
+  <app-input-field
+    label="Senha"
+    placeholder="Digite sua senha"
+    type="password"
+    [control]="passwordControl"
+    [required]="true"
+  ></app-input-field>
+
+  <div *ngIf="invalidCredentials" class="login-error">
+    Email ou senha inválidos.
+  </div>
+
+  <button class="login-btn" type="submit">Entrar</button>
+</form>

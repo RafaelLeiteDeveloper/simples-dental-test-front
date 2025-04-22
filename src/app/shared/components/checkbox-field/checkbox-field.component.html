@@ -1,0 +1,11 @@
+<div class="checkbox-field">
+  <label>
+    <input type="checkbox" [formControl]="control" />
+    {{ label }}
+  </label>
+
+  <div class="form-error" *ngIf="control?.hasError('required') && control?.touched">
+    {{ label }} is required
+  </div>
+</div>
+

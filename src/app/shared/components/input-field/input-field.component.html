@@ -1,0 +1,16 @@
+<div class="custom-form-field" [ngClass]="{'has-error': control.invalid && (control.dirty || control.touched)}">
+  <label class="custom-label">{{ label }} <span *ngIf="required">*</span></label>
+
+  <input
+    [type]="type"
+    [placeholder]="placeholder"
+    [formControl]="control"
+    [required]="required"
+    class="custom-input"
+    [ngClass]="{'invalid': control.invalid && (control.dirty || control.touched)}"
+  />
+
+  <div class="error" *ngIf="control.invalid && (control.dirty || control.touched)">
+    {{ getErrorMessage() }}
+  </div>
+</div>
