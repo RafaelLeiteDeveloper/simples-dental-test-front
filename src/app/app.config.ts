@@ -4,7 +4,7 @@ import {HTTP_INTERCEPTORS, provideHttpClient, withInterceptorsFromDi} from '@ang
 import { provideAnimations } from '@angular/platform-browser/animations';
 
 import { routes } from './app.routes';
-import {AuthInterceptor} from './auth/auth.interceptor';
+import {AuthInterceptor} from './core/auth/auth.interceptor';
 
 export const appConfig: ApplicationConfig = {
   providers: [

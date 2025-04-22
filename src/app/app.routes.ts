@@ -1,16 +1,16 @@
 import { Routes } from '@angular/router';
-import { HomeComponent } from './components/home/home.component';
-import { ProductListComponent } from './components/products/product-list/product-list.component';
-import { ProductFormComponent } from './components/products/product-form/product-form.component';
-import { ProductDetailComponent } from './components/products/product-detail/product-detail.component';
-import { CategoryListComponent } from './components/categories/category-list/category-list.component';
-import { CategoryFormComponent } from './components/categories/category-form/category-form.component';
-import { CategoryDetailComponent } from './components/categories/category-detail/category-detail.component';
-import { UserProfileComponent } from './components/user/user-profile.component';
-import { LoginComponent } from './components/login/login.component';
+import { HomeComponent } from './features/home/home.component';
+import { ProductListComponent } from './features/products/product-list/product-list.component';
+import { ProductFormComponent } from './features/products/product-form/product-form.component';
+import { ProductDetailComponent } from './features/products/product-detail/product-detail.component';
+import { CategoryListComponent } from './features/categories/category-list/category-list.component';
+import { CategoryFormComponent } from './features/categories/category-form/category-form.component';
+import { CategoryDetailComponent } from './features/categories/category-detail/category-detail.component';
+import { UserProfileComponent } from './features/user/user-profile.component';
+import { LoginComponent } from './features/login/login.component';
 
-import { adminGuard } from './auth/admin.guard';
-import { authGuard } from './auth/auth.guard';
+import { adminGuard } from './core/auth/admin.guard';
+import { authGuard } from './core/auth/auth.guard';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },

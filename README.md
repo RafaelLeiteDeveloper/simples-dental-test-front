@@ -1,59 +1,93 @@
 # Desafio Frontend – Requisitos
 
-Este documento apresenta os requisitos para implementação do frontend, garantindo compatibilidade com as regras e endpoints definidos no backend.
-
-## 1. Validações
-
-Você deve ajustar as entidades (model e sql) de acordo com as regras abaixo: 
-
-- `Product.name` é obrigatório, não pode ser vazio e deve ter no máximo 100 caracteres.
-- `Product.description` é opcional e pode ter no máximo 255 caracteres.
-- `Product.price` é obrigatório deve ser > 0.
-- `Product.status` é obrigatório.
-- `Product.category` é obrigatório.
-- `Category.name` deve ter no máximo 100 caracteres.
-- `Category.description` é opcional e pode ter no máximo 255 caracteres.
-
-## 2. Refatoração
-- Devido às constantes atualizações do Angular e Angular Material, substitua todas as ocorrências de `mat-form-field` por componentes customizados para inputs e textareas, que sejam parametrizáveis e reutilizáveis em todos os formulários.
-
-## 3. Otimização de Performance
-- Ajuste as listagens e consultas para suportar paginação, conforme implementado no backend, garantindo o desempenho mesmo com grande volume de dados.
-
-## 4. Refatoração  
-- Atualize os componentes de produto para utilizar a nova versão da API:
-  - Use o endpoint **`/api/v2/products`** para todas as operações relacionadas a produtos.
-
-## 6. Autenticação e Gerenciamento de Usuários
-
-Implemente as seguintes funcionalidades:
-
-- **Usuários Admin**
-  - Crie componentes para listagem e edição de usuários (apenas para usuários com role `admin`).
-
-- **Profile do Usuário**
-  - Implemente um formulário que permita ao usuário visualizar seus dados (`name`, `email`, `role`) e alterar sua senha.
-  - Exiba, ao lado dos menus de "Products" e "Categories", o nome do usuário autenticado com um link para o profile.
-    - Utilize o endpoint **`/auth/context`** para obter os dados do usuário (id, email e role).
- 
-
-## 7. Permissões e Controle de Acesso
-
-Adapte as telas e funcionalidades de acordo com a role do usuário:
-
-- Usuários com role `admin` possuem acesso completo (criar, editar e excluir produtos, categorias e usuários).
-- Outros usuários terão acesso limitado conforme definido nos requisitos do projeto.
+Este projeto foi desenvolvido como parte de um desafio técnico proposto pela Simples Dental. A aplicação é um frontend em Angular que consome uma API protegida por JWT, permitindo o gerenciamento de usuários com controle de acesso baseado em perfis (admin/user), formulários reativos e design responsivo.
 
 ---
 
-# Perguntas
+## 🚀 Tecnologias Utilizadas
 
-1. Considerando uma aplicação frontend complexa, qual arquitetura (ex.: component-based, Flux/Redux ou MVVM) você adotaria e por que?
-2. Como você otimiza a performance do frontend ao lidar com grandes volumes de dados e múltiplos componentes, especialmente utilizando paginação e renderização condicional?
-3. Quais métodos e frameworks de teste (unitários e de integração) você empregaria para assegurar a qualidade dos componentes customizados e da interface?
-4. Quais práticas de segurança específicas para o frontend você implementaria para prevenir vulnerabilidades como XSS, CSRF e manipulação inadequada do DOM?
-5. Como garantir a compatibilidade e responsividade dos componentes customizados em diferentes navegadores e dispositivos, mantendo uma experiência consistente para o usuário?
-6. De que forma você estruturaria a comunicação com a API (incluindo versionamento de endpoints) e trataria erros de forma a manter a robustez da aplicação?
+- **Angular 19**
+- **TypeScript**
+- **RxJS**
+- **Angular Router**
+- **Angular Material + CDK**
+- **Angular CLI**
+- **Zone.js**
+- **SCSS**
+- **Docker / Docker Compose**
 
-Obs: Forneça apenas respostas textuais; não é necessário implementar as perguntas acima.
+---
 
+## 📁 Estrutura de Pastas Baseado na arquitetura Hexagonal
+
+```bash
+├── src/app
+│   ├── core/                    # Funcionalidades centrais (auth, serviços)
+│   ├── shared/                 # Componentes e pipes reutilizáveis
+│   ├── features/              # Componentes por domínio do sistema
+│   ├── models/                # Tipos e interfaces do sistema
+│   ├── app.routes.ts          # Definição de rotas
+│   ├── app.config.ts          # Configurações gerais do app
+│   └── app.component.*        # Componente principal da aplicação
+├── assets                # Imagens e arquivos estáticos
+├── environments          # Configurações por ambiente
+├── Dockerfile            # Dockerfile para build do app
+├── angular.json          # Configurações do Angular CLI
+├── package.json          # Dependências do projeto
+├── README.md             # Este arquivo
+```
+
+---
+
+## ⚙️ Pré-requisitos
+
+- Node.js 18+
+- Angular CLI
+- Docker e Docker Compose (opcional, para execução em contêiner)
+
+---
+
+## ▶️ Como Executar o Projeto
+
+### ✅ Com Docker (recomendado)
+
+```bash
+docker-compose up --build
+```
+
+- A aplicação será iniciada em: `http://localhost:8081`
+
+### ✅ Sem Docker (ambiente local)
+
+1. Instale as dependências:
+
+```bash
+npm install
+```
+
+2. Inicie o servidor de desenvolvimento:
+
+```bash
+ng serve
+```
+
+- A aplicação será iniciada em: `http://localhost:4200`
+
+---
+
+## 🧰 Funcionalidades
+
+- **Autenticação**: Login com JWT.
+- **Produtos**: CRUD de produtos.
+- **Categoria**: CRUD de categorias.
+- **Controle de Acesso**: Diferenciação de perfis (admin/user).
+- **Formulários Reativos**: Validação e manipulação de formulários.
+- **Configuração de Rotas**: Proteção de rotas com Guards.
+
+---
+
+## 👨‍💻 Autor
+
+Desenvolvido por **Rafael Leite**  
+📧 rleite.developer@gmail.com  
+💼 Desafio técnico - Simples Dental

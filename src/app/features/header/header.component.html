@@ -14,5 +14,7 @@
     <a mat-button routerLink="/profile" routerLinkActive="active">
       <mat-icon>person</mat-icon> {{ user.name }}
     </a>
+
+    <button mat-button (click)="logout()">Logout</button>
   </ng-container>
 </mat-toolbar>

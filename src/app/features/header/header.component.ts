@@ -4,7 +4,7 @@ import { RouterModule } from '@angular/router';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { AuthService, AuthUser } from '../../services/auth.service';
+import { AuthService, AuthUser } from '../../core/services/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -29,5 +29,10 @@ export class HeaderComponent implements OnInit {
       next: (user: any) => this.user = user,
       error: () => this.user = null
     });
+  }
+
+  logout(): void {
+    localStorage.removeItem('auth_token');
+    window.location.reload();
   }
 }

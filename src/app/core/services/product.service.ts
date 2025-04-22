@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import {PaginatedResponse, Product} from '../models/product.model';
+import {PaginatedResponse, Product} from '../../models/product.model';
 
 @Injectable({
   providedIn: 'root'

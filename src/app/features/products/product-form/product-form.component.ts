@@ -12,8 +12,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 
 import { Product } from '../../../models/product.model';
-import { ProductService } from '../../../services/product.service';
-import { CategoryService } from '../../../services/category.service';
+import { ProductService } from '../../../core/services/product.service';
+import { CategoryService } from '../../../core/services/category.service';
 import { Category } from '../../../models/category.model';
 import {TextareaFieldComponent} from '../../../shared/components/textarea-field/textarea-field.component';
 import {InputFieldComponent} from '../../../shared/components/input-field/input-field.component';

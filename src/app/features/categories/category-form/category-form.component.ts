@@ -10,7 +10,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 
 import { Category } from '../../../models/category.model';
-import { CategoryService } from '../../../services/category.service';
+import { CategoryService } from '../../../core/services/category.service';
 import {InputFieldComponent} from '../../../shared/components/input-field/input-field.component';
 import {TextareaFieldComponent} from '../../../shared/components/textarea-field/textarea-field.component';
 

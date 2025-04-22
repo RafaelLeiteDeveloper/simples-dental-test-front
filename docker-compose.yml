@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+  angular-app:
+    build: .
+    ports:
+      - "4200:4200"
+    environment:
+      - IS_DOCKER=true
+    restart: unless-stopped
+    volumes:
+      - .:/app
+      - /app/node_modules

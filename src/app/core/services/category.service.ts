@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Category } from '../models/category.model';
-import {PaginatedResponse} from '../models/product.model';
+import { Category } from '../../models/category.model';
+import {PaginatedResponse} from '../../models/product.model';
 
 @Injectable({
   providedIn: 'root'
